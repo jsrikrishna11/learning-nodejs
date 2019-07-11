@@ -4,6 +4,8 @@ var fs = require('fs');
 const startPage = 'startPage.html'
 const OKhead = {'Content-Type':'text/html'};
 http.createServer(function(req, res){
+    var address = url.parse(req.url, true);
+    console.log(address);
     fs.readFile(startPage, function(err, data){
         if(err){
             console.log(err);
