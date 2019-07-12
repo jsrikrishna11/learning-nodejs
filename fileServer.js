@@ -5,7 +5,7 @@ const startPage = 'startPage.html'
 const OKhead = {'Content-Type':'text/html'};
 http.createServer(function(req, res){
     var address = url.parse(req.url, true);
-    console.log(address);
+    console.log(address.pathname);
     fs.readFile(startPage, function(err, data){
         if(err){
             console.log(err);
@@ -14,7 +14,7 @@ http.createServer(function(req, res){
         console.log(data);
         res.write(data);    
         return res.end();
-    })
+    });
     
 }).listen(8080);
 console.log("server created.")
