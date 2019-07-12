@@ -10,7 +10,7 @@ app.get('/',function(req, res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-app.post('/details', urlencodedParser, function(req, res){
+app.post('/', urlencodedParser, function(req, res){
     response = {
         first_name : req.body.name1,
         last_name : req.body.name2
