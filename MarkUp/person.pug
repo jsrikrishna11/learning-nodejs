@@ -1,0 +1,17 @@
+html
+    head    
+        title Person
+    body
+        form(action="/person", method="POST")
+            div 
+                label(for="name") Name:
+                input(name="name")
+            br
+            div
+                label(for="age") Age:
+                input(type="text" name="age")
+            br
+            div
+                input(type="text" name="nationality" value="Enter Nationality")
+            br
+            button(type="Submit") Create new person
