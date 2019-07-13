@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var upload = multer();
 var app = express();
-mongoose.connect('mongodb://localhost/my_db');
+mongoose.connect('mongodb://localhost/my_db', {useNewUrlParser: true});
 
 var personSchema = mongoose.Schema({
     name: String,
