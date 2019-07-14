@@ -6,3 +6,5 @@ html
             h3(style="color:red") #{message}
         else
             h3 New Person, name : #{person.name} age: #{person.age} nationality: #{person.nationality} added!
+        form(action="/wantpeople" method="GET")
+            button(type="submit") Do you want to fetch people?
