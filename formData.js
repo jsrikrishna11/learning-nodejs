@@ -33,7 +33,7 @@ app.get('/person', function(req, res){
 
 app.post('/person', function(req, res){
     var personInfo = req.body;
-    if(!personInfo.name || !personInfo.age || !personInfo.nationality  ){
+    if(!personInfo.name || !personInfo.age || !personInfo.nationality ||  personInfo.nationality.localeCompare("None") ){
         res.render('show_message', {
             message: "Sorry, you provided wrong info", type:"error"
         });
@@ -56,5 +56,10 @@ app.post('/person', function(req, res){
         })
     }
 });
+ app.get('/people', function(req, res){
+    Person.find(function(err, response){
+        res.json(response);
+    });
+ });
 
 app.listen(8080, ()=> console.log("Started."));
